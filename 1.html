@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 3, , 5]
+        for (var i = 0; i < arr.length; i++) {
+            console.log(arr[i])
+        }
+
+        console.log('---------')
+
+        arr.forEach(function (value) {
+            console.log(value)
+        })
+
+        console.log('---------')
+
+        for (var key in arr) {
+            console.log(arr[key])
+        }
+
+        console.log('---------')
+
+        for (var value of arr) {
+            console.log(value)
+        }
+
+        console.log('---------')
+
+        function print() {
+            console.log(arguments)
+        }
+
+        print(2, 3, 6, 8)
+
+        console.log('---------')
+
+        function sum() {
+            var result = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                result += arguments[i]
+            }
+            console.log(result)
+        }
+
+        sum(4, 4, 4)
+
+        console.log('---------')
+
+        function sum2() {
+            let result = 0;
+            [...arguments].forEach((value) => {
+                result += value
+            })
+            console.log(result)
+        }
+
+        sum2(5, 5, 5)
+
+        console.log('---------')
+
+        function sum3() {
+            let result = 0;
+            Array.from(arguments).forEach((value) => {
+                result += value
+            })
+            console.log(result)
+        }
+
+        sum3(6, 6, 6)
+
+        console.log('---------')
+
+        function sum4() {
+            let result = 0;
+            for (let value of arguments) {
+                result += value;
+            }
+            console.log(result)
+        }
+
+        sum4(7, 7, 7)
+
+        console.log('---------')
+
+        function sum5() {
+            let result = 0;
+            Array.prototype.forEach.call(arguments, function (value) {
+                result += value
+            })
+            console.log(result)
+        }
+        
+        sum5(8, 8, 8)
+    </script>
+</body>
+
+</html>
